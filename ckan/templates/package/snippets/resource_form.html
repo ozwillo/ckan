@@ -43,6 +43,30 @@
     {% endblock %}
   {% endblock basic_fields %}
 
+  {% if new %}
+  {% block location_fields %}
+    <span class="info-block info-block-small">
+      <i class="fa fa-info-circle"></i>
+      {{ _('These fields are optional, fill only if you are importing a CSV containing address, zipcode and city columns and you wish to add two columns with the coordinates at the end of your file') }}
+    </span>
+    {% block fields_address %}
+      {{ form.input('address', id='field-address', label=_('Address'), placeholder=_('Address column number'), value=data.address) }}
+    {% endblock %}
+
+    {% block fields_addition %}
+      {{ form.input('addition', id='field-addition', label=_('Additional address'), placeholder=_('Additional address column number'), value=data.addition) }}
+    {% endblock %}
+
+    {% block fields_zipcode %}
+      {{ form.input('zipcode', id='field-zipcode', label=_('Zipcode'), placeholder=_('Zipcode column number'), value=data.zipcode) }}
+    {% endblock %}
+
+    {% block fields_city %}
+      {{ form.input('city', id='field-city', label=_('City'), placeholder=_('City column number'), value=data.city) }}
+    {% endblock %}
+  {% endblock location_fields %}
+  {% endif %}
+
   {% block metadata_fields %}
     {% if include_metadata %}
       {# TODO: Where do these come from, they don't exist in /package/new_package_form.html #}

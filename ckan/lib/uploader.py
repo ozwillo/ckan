@@ -11,6 +11,7 @@ import ckan.lib.munge as munge
 import ckan.logic as logic
 import ckan.plugins as plugins
 from ckan.common import config
+from ckan.lib import location
 
 log = logging.getLogger(__name__)
 
@@ -182,6 +183,8 @@ class Upload(object):
 
 class ResourceUpload(object):
     def __init__(self, resource):
+        self.resource = resource
+
         path = get_storage_path()
         config_mimetype_guess = config.get('ckan.mimetype_guess', 'file_ext')
 
@@ -290,11 +293,8 @@ class ResourceUpload(object):
                 output_file.write(data)
                 if current_size > max_size:
                     os.remove(tmp_filepath)
-                    raise logic.ValidationError(
-                        {'upload': ['File upload too large']}
-                    )
 
-            output_file.close()
+            location.geores(tmp_filepath, self.resource)
             os.rename(tmp_filepath, filepath)
             return
 

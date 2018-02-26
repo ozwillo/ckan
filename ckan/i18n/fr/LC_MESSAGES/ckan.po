@@ -2,7 +2,7 @@
 # Copyright (C) 2017 ORGANIZATION
 # This file is distributed under the same license as the ckan project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
@@ -4111,6 +4111,42 @@ msgstr "Enregistrer & ajouter un autre"
 #: ckan/templates/package/snippets/resource_form.html:77
 msgid "Finish"
 msgstr "Terminer"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "Address"
+msgstr "Adresse"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "Address column number"
+msgstr "Numéro de la colonne adresse"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "Additional address column number"
+msgstr "Numéro de la colonne complément d'adresse"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "Zipcode"
+msgstr "Code postal"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "Zipcode column number"
+msgstr "Numéro de la colonne code postal"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "City"
+msgstr "Ville"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "City column number"
+msgstr "Numéro de la colonne ville"
+
+#: ckan/templates/package/snippets/resource_form.html
+msgid "These fields are optional, fill only if you are importing a CSV containing address, zipcode and city columns and you wish to add two columns with the coordinates at the end of your file"
+msgstr "Ces champs sont facultatifs, à ne remplir seulement si vous importez un fichier CSV contenant des colonnes adresse, code postal et ville et que vous souhaitez ajouter les coordonées correspondantes à ces adresses à la fin de votre fichier"
 
 #: ckan/templates/package/snippets/resource_help.html:2
 msgid "What's a resource?"
