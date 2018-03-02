@@ -149,10 +149,10 @@ def geores(file, data_dict):
 
     for record in records:
         # Get the address, zipcode and city from the record
-        street = record.get(col_street_name, '')
-        street_bis = record.get(col_street_bis_name, '')
-        zipcode = record.get(col_zipcode_name, '')
-        city = record.get(col_city_name, '')
+        street = record.get(col_street_name, '') or ''
+        street_bis = record.get(col_street_bis_name, '') or ''
+        zipcode = record.get(col_zipcode_name, '') or ''
+        city = record.get(col_city_name, '') or ''
         addresses.append(Address(street + ' ' + street_bis, city, zipcode))
 
     result = pool.imap(geocode, addresses)
