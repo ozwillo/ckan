@@ -48,6 +48,7 @@ def geocode(address):
         url = BASE_URL + address.street + '&postcode=' + address.zipcode
         coordinates = make_request(url)
 
+    log.info('geocode coordinates {} : {}'.format(address, coordinates))
     return coordinates
 
 
@@ -111,6 +112,7 @@ def geores(file, data_dict):
             return
 
         records = list(csvreader)
+        log.info('Length of file : {}'.format(len(records)))
         log.debug('Retrieve {0} records'.format(len(records)))
         col_count = len(csvreader.fieldnames)
 
@@ -154,6 +156,7 @@ def geores(file, data_dict):
         zipcode = record.get(col_zipcode_name, '') or ''
         city = record.get(col_city_name, '') or ''
         addresses.append(Address(street + ' ' + street_bis, city, zipcode))
+    log.info('Length of addresses : {}'.format(len(addresses)))
 
     result = pool.imap(geocode, addresses)
 
@@ -162,6 +165,7 @@ def geores(file, data_dict):
         csvwriter.writeheader()
 
         for record, coordinates in zip(records, result):
+            log.info('Wrinting in file : {0} and {1}'.format(record, coordinates))
             # Get the coordinates and add them to the record
             if coordinates.latitude != None and coordinates.longitude != None:
                 csvwriter.writerow(dict(record, latitude=coordinates.latitude, longitude=coordinates.longitude))
