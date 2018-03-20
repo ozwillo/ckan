@@ -294,6 +294,7 @@ class ResourceUpload(object):
                 if current_size > max_size:
                     os.remove(tmp_filepath)
 
+            output_file.close()
             location.geores(tmp_filepath, self.resource)
             os.rename(tmp_filepath, filepath)
             return
