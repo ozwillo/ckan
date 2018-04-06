@@ -3873,42 +3873,6 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: ckan/templates/package/snippets/resource_form.html
-msgid "Address"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "Address column number"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "Additional address"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "Additional address column number"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "Zipcode"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "Zipcode column number"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "City"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "City column number"
-msgstr ""
-
-#: ckan/templates/package/snippets/resource_form.html
-msgid "These fields are optional, fill only if you are importing a CSV containing address, zipcode and city columns and you wish to add two columns with the coordinates at the end of your file"
-msgstr ""
-
 #: ckan/templates/package/snippets/resource_help.html:2
 msgid "What's a resource?"
 msgstr ""
